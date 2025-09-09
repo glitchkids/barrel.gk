@@ -1,0 +1,46 @@
+{
+  "name": "barrel.gk",
+  "description": "Barrel files creator for JS/TS projects.",
+  "author": "Glitch Kids Softwares",
+  "files": [
+    "dist"
+  ],
+  "version": "1.0.0",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "bin": "./dist/cli.js",
+  "scripts": {
+    "build": "tsdown ./src/index.ts ./src/cli.ts",
+    "test:bin": "node ./dist/cli.js",
+    "test:config-reader": "tsx ./tests/config-reader.test.ts",
+    "test:barrel-builder": "tsx ./tests/barrel-builder.test.ts"
+  },
+  "keywords": [
+    "barrel"
+  ],
+  "license": "MIT",
+  "packageManager": "pnpm@10.12.3",
+  "devDependencies": {
+    "@types/node": "^24.3.1",
+    "tsdown": "^0.15.0",
+    "tsx": "^4.20.5",
+    "typescript": "^5.9.2"
+  },
+  "barrel.gk": {
+    "rootFolders": [
+      "./tests/playground"
+    ],
+    "exports": [
+      {
+        "ext": ".svelte",
+        "exportType": "default"
+      },
+      {
+        "ext": ".ts",
+        "exportType": "all",
+        "fileNameTransform": "RemoveExtension"
+      }
+    ]
+  }
+}
