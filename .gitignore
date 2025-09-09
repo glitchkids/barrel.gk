@@ -3,3 +3,4 @@ pnpm-lock.yaml
 src
 tests
 pnpm-workspace.yaml
+tsconfig.json
